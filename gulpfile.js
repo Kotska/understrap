@@ -128,7 +128,7 @@ gulp.task( 'styles', function( callback ) {
 } );
 
 gulp.task( 'phpTask', function(  ) {
-	return src('.')
+	return gulp.src('.')
 		.pipe(livereload());
 } );
 
@@ -157,7 +157,7 @@ gulp.task( 'watch', function() {
 	);
 
 	// Inside the watch task.
-	gulp.watch( paths.imgsrc + '/**', gulp.series( 'imagemin-watch' ) );
+	gulp.watch( paths.imgsrc + '/**', gulp.series( 'imagemin' ) );
 	gulp.watch('./**/*.php', gulp.series( 'phpTask' ));
 } );
 
